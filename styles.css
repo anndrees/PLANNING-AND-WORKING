@@ -1,0 +1,201 @@
+.boton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--color-primario);
+  /* Color de fondo amarillo */
+  color: var(--negro);
+  /* Color del texto negro */
+  text-decoration: none;
+  /* Eliminar subrayado del enlace */
+  border: none;
+  /* Eliminar borde del botón */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  transition: background-color 0.15s ease-in-out;
+}
+
+.boton:hover {
+  /*debe hacer una transicion ease-in-out*/
+  background-color: var(--color-primario-hover);
+  /* Color de fondo amarillo más oscuro al pasar el cursor por encima */
+  color: var(--blanco);
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+:root {
+  --color-primario: #ffa600;
+  --color-primario-hover: #a86d00;
+  --blanco: #fff;
+  --negro: #000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+
+/* Estilos para el modal de editar facturas*/
+.modal {
+  display: none;
+  /* Ocultar el modal por defecto */
+  position: fixed;
+  /* Fijar el modal en la ventana del navegador */
+  z-index: 1;
+  /* Establecer la capa más alta */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* Permitir desplazamiento cuando el contenido sea demasiado grande */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Fondo oscuro semi-transparente */
+}
+
+/* Estilos para el contenido del modal */
+.modal-contenido {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* Centrar el modal verticalmente */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  /* Ancho del modal */
+  border-radius: 7px;
+}
+
+/* Estilos para el botón de cerrar */
+.cerrar-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.cerrar-modal:hover,
+.cerrar-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+/* Estilos para el modal de añadir clientes*/
+.modal {
+  display: none;
+  /* Ocultar el modal por defecto */
+  position: fixed;
+  /* Fijar el modal en la ventana del navegador */
+  z-index: 1;
+  /* Establecer la capa más alta */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* Permitir desplazamiento cuando el contenido sea demasiado grande */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Fondo oscuro semi-transparente */
+}
+
+/* Estilos para el contenido del modal */
+.modal-contenido {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* Centrar el modal verticalmente */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  /* Ancho del modal */
+  border-radius: 7px;
+}
+
+/* Estilos para el botón de cerrar */
+.cerrar-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.cerrar-modal:hover,
+.cerrar-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+button{
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: var(--color-primario);
+  color: var(--negro);
+  border: none;
+  transition: background-color 0.15s ease-in-out;
+  font-weight: bold;
+}
+
+button:hover{
+  background-color: var(--color-primario-hover);
+  color: var(--blanco);
+}
+
+input, textarea{
+  border-radius: 4px;
+  padding: 5px;
+  border: 1px solid var(--negro);
+  transition: border-color 0.15s ease-in-out;
+  color: var(--negro);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--color-primario-hover);
+  outline: none;
+  transition: border-color 0.15s ease-in-out;
+}
+
+fieldset{
+  border: 1px solid var(--negro);
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: border-color 0.15s ease-in-out;
+}
+
+textarea{
+  resize: none;
+  height: 100px;
+}
+
+select{
+  border-radius: 4px;
+  padding: 5px;
+  border: 1px solid var(--negro);
+  transition: border-color 0.15s ease-in-out;
+  color: var(--negro);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+option{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+#modalAñadirCliente .modal-contenido {
+  width: fit-content;
+}

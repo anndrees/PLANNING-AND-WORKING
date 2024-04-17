@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planning & Working - Facturas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <img src="img/Logo.png" alt="Logo de la empresa Planning & Working" title="Planning & Working"
+            style="max-width: 450px;">
+        <nav>
+            <!-- Enlaces de navegación de la página -->
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="facturas.html">Facturas</a></li>
+                <li><a href="presupuestos.html">Presupuestos</a></li>
+                <li><a href="albaranes.html">Albaranes</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+            </ul>
+        </nav>
+
+        <!-- Botones para crear documentos -->
+        <div class="botones-crear">
+            <a href="facturas.html" class="boton">Crear Factura</a>
+            <a href="presupuestos.html" class="boton">Crear Presupuesto<a>
+                    <a href="albaranes.html" class="boton">Crear Albaran<a>
+        </div>
+    </header>
+    <main>
+        <section id="facturas">
+            <h2>Facturas</h2>
+
+            <div id="modalEditarFactura" class="modal">
+                <div class="modal-contenido">
+                    <span class="cerrar-modal" onclick="cerrarModalEditarFactura()">&times;</span>
+                    <h2>Editar Factura</h2>
+                    <form id="formularioEditarFactura">
+                        <label for="numFacturaEditar">Número de Factura</label><br>
+                        <input type="text" id="numFacturaEditar" name="numFacturaEditar">
+                        <!-- Campo deshabilitado para mostrar el número de factura -->
+                        <br><br>
+                        <label for="clienteEditar">Cliente:</label>
+                        <select id="clienteEditar" name="clienteEditar">
+                            <!-- Aquí se cargarán dinámicamente las opciones de clientes -->
+                        </select>
+
+                        <label for="fechaEditar">Fecha:</label>
+                        <input type="date" id="fechaEditar" name="fechaEditar" required>
+                        <br><br>
+
+                        <fieldset id="conceptosEditar">
+                            <legend>Conceptos:</legend>
+                            <!-- Aquí se cargarán dinámicamente los conceptos de la factura para editar -->
+                        </fieldset>
+                        <br>
+
+                        <button type="button" id="anadirConceptoEditarFactura">Añadir Concepto</button>
+                        <button type="submit">Guardar Cambios</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <form id="formularioFactura">
+                <select id="selectCliente" name="selectCliente">
+                    <option value="selectClienteDefault" disabled selected>-- Seleccione un cliente --</option>
+                </select>
+                <button id="añadirCliente" type="button">Añadir Cliente</button>
+
+                <div id="modalAñadirCliente" class="modal">
+                    <div class="modal-contenido">
+                        <span class="cerrar-modal" onclick="ocultarModalAñadirCliente()">&times;</span>
+                        <h2>Añadir Cliente</h2>
+                        <form id="formularioAñadirCliente">
+                            <label for="nombreCliente">Nombre / Razón Social</label><br>
+                            <input type="text" id="nombreCliente" name="nombreCliente" required>
+                            <br><br>
+                            <label for="nifCliente">NIF</label><br>
+                            <input type="text" id="nifCliente" name="nifCliente" required>
+                            <br><br>
+                            <label for="direccionCliente">Dirección</label><br>
+                            <input type="text" id="direccionCliente" name="direccionCliente" required>
+                            <br><br>
+                            <label for="cpCliente">Código Postal</label><br>
+                            <input type="text" id="cpCliente" name="cpCliente" required>
+                            <br><br>
+                            <button type="submit" onclick="anadirCliente()">Añadir Cliente</button>
+                        </form>
+                    </div>
+                </div>                
+
+                <br>
+                <div id="datosCliente">
+                </div>
+                <hr>
+                <label for="numFactura">Numero de factura</label><br>
+                <input type="text" id="numFactura" name="numFactura" placeholder="Número de Factura" required>
+                <br><br>
+                <label for="fecha">Fecha de factura</label>
+                <br>
+                <input type="date" id="fecha" name="fecha" placeholder="Fecha" required>
+                <br><br>
+
+                <fieldset id="conceptos">
+                    <legend>Conceptos</legend>
+                    <div class="conceptoFactura">
+                        <textarea name="conceptoFactura" placeholder="Escriba aquí el concepto" required></textarea>
+                        <input type="text" name="importeFactura" placeholder="Importe (€)" required>
+                        <button type="button" class="eliminar-concepto">Eliminar concepto</button>
+                    </div>
+                </fieldset>
+                <button type="button" id="anadirConceptoFactura">Añadir Concepto</button>
+                <button type="submit">Crear Factura</button>
+
+            </form>
+
+            <table id="tablaFacturas">
+                <!-- Tabla de facturas -->
+                <caption>Listado de facturas</caption>
+                <thead>
+                    <tr>
+                        <th>Número de Factura</th>
+                        <th>Cliente</th>
+                        <th>Fecha</th>
+                        <th>Importe</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTablaFacturas">
+                    <!-- Aquí se cargarán dinámicamente las filas de la tabla con los datos de las facturas -->
+                </tbody>
+            </table>
+            <div id="sinFacturasMensaje" style="display: none;">No hay facturas creadas aún.</div>
+
+        </section>
+    </main>
+    <script src="facturas.js"></script>
+</body>

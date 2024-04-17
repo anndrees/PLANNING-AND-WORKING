@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planning & Working - Clientes</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <img src="img/Logo.png" alt="Logo de la empresa Planning & Working" title="Planning & Working" style="max-width: 450px;">
+        <nav>
+            <!-- Enlaces de navegación de la página -->
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="facturas.html">Facturas</a></li>
+                <li><a href="presupuestos.html">Presupuestos</a></li>
+                <li><a href="albaranes.html">Albaranes</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+            </ul>
+        </nav>
+    
+        <!-- Botones para crear documentos -->
+        <div class="botones-crear">
+            <a href="facturas.html" class="boton">Crear Factura</a>
+            <a href="presupuestos.html" class="boton">Crear Presupuesto<a>
+            <a href="albaranes.html" class="boton">Crear Albaran<a>
+        </div>
+    </header>
+    <main>
+
+        <h2>Lista de Clientes</h2>
+        <div id="modalAñadirCliente" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar-modal" onclick="ocultarModalAñadirCliente()">&times;</span>
+                <h2>Añadir Cliente</h2>
+                <form id="formularioAñadirCliente">
+                    <label for="nombreCliente">Nombre / Razón Social</label><br>
+                    <input type="text" id="nombreCliente" name="nombreCliente" required>
+                    <br><br>
+                    <label for="nifCliente">NIF</label><br>
+                    <input type="text" id="nifCliente" name="nifCliente" required>
+                    <br><br>
+                    <label for="direccionCliente">Dirección</label><br>
+                    <input type="text" id="direccionCliente" name="direccionCliente" required>
+                    <br><br>
+                    <label for="cpCliente">Código Postal</label><br>
+                    <input type="text" id="cpCliente" name="cpCliente" required>
+                    <br><br>
+                    <button type="submit">Añadir Cliente</button>
+                </form>
+            </div>
+        </div>  
+        <ul id="listaClientes">
+            <!-- Aquí se mostrará la lista de clientes -->
+        </ul>
+        <button id="añadirCliente" type="button" class="boton">Añadir cliente</button>
+    </main>
+        
+    <script src="clientes.js"></script>
+</body>
+</html>
