@@ -1,0 +1,32 @@
+# Ignorar todos los archivos temporales
+*.tmp
+
+# Ignorar archivos de configuración de Visual Studio
+.vscode/
+.vscodeignore
+
+# Ignorar archivos generados por tu IDE
+.vscode/
+.idea/
+*.suo
+*.user
+*.lock
+*.swp
+*.tmp
+*.bak
+*.pyc
+*.class
+
+# Ignorar archivos de compilación
+build/
+dist/
+
+# Ignorar archivos de configuración de Git
+.git/
+
+# Ignorar archivos de configuración de GitHub
+.github/
+
+# Ignorar archvios de Variables de Entorno
+.env/
+.envrc
