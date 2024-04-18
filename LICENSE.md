@@ -1,6 +1,6 @@
 Licencia MIT
 
-Copyright (c) [año] [Planning & Working]
+Copyright © 2023 - 2024 Planning & Working
 
 Se concede permiso, de forma gratuita, a cualquier persona que obtenga una copia
 de este software y archivos de documentación asociados (el "Software"), para tratar
